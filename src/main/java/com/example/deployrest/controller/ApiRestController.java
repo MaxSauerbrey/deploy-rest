@@ -23,13 +23,13 @@ public class ApiRestController {
         this.personRepository = personRepository;
     }
 
-    @GetMapping("/api/persona")
+    @GetMapping("/api/personas")
     public List<Persona> findAll() {
         // Recuperar y devolver los libros de base de datos
         return personRepository.findAll();
     }
 
-    @GetMapping("/api/persona/{id}")
+    @GetMapping("/api/personas/{id}")
     public ResponseEntity<Persona> findOneById(@PathVariable Long id) {
         Optional<Persona> personaOpt = personRepository.findById(id);
         if (personaOpt.isPresent()) {
